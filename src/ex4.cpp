@@ -286,16 +286,16 @@ public:
 int main() {
     cout << "=== Proof of Work Blockchain ===\n";
     BlockchainPoW bcPoW(4);
-    bcPoW.addBlock({{"TX1","Alice","Bob",10},{"TX2","Bob","Carol",5}});
-    bcPoW.addBlock({{"TX3","Carol","Alice",7},{"TX4","Bob","Alice",2}});
+    bcPoW.addBlock({{"TX1","Anas","Rachid",10},{"TX2","Rachid","Karim",5}});
+    bcPoW.addBlock({{"TX3","Karim","Anas",7},{"TX4","Rachid","Anas",2}});
 
     cout << "Is PoW blockchain valid? " << (bcPoW.isChainValid() ? "Yes" : "No") << "\n\n";
 
     cout << "=== Proof of Stake Blockchain ===\n";
-    vector<Validator> validators = {{"Alice",50},{"Bob",30},{"Carol",20}};
+    vector<Validator> validators = {{"Anas",50},{"Rachid",30},{"Karim",20}};
     BlockchainPoS bcPoS(validators);
-    bcPoS.addBlock({{"TX1","Alice","Bob",10},{"TX2","Bob","Carol",5}});
-    bcPoS.addBlock({{"TX3","Carol","Alice",7},{"TX4","Bob","Alice",2}});
+    bcPoS.addBlock({{"TX1","Anas","Rachid",10},{"TX2","Rachid","Karim",5}});
+    bcPoS.addBlock({{"TX3","Karim","Anas",7},{"TX4","Rachid","Anas",2}});
 
     cout << "Is PoS blockchain valid? " << (bcPoS.isChainValid() ? "Yes" : "No") << "\n";
 
